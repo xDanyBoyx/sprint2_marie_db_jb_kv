@@ -12,6 +12,7 @@ const Color colorPrincipal = Color(0xFF8B2E24);
 class _Ventana1State extends State<Ventana1> {
   int _indice = 0;
 
+<<<<<<< HEAD
   // --- DATOS DE COMPRAS (HISTORIAL) ---
   // Si quieres ver la pantalla vacía, borra el contenido de esta lista: []
   final List<Map<String, String>> comprasRealizadas = [
@@ -31,6 +32,8 @@ class _Ventana1State extends State<Ventana1> {
     },
   ];
 
+=======
+>>>>>>> 35a035a0f8cf0280ce075ff7e5ab069e42a4fb2a
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,13 +50,19 @@ class _Ventana1State extends State<Ventana1> {
                 fontWeight: FontWeight.bold,
               ),
             ),
+<<<<<<< HEAD
             const SizedBox(width: 20),
             // Asegúrate de que logo.png exista
             Image.asset('assets/logo.png', height: 30, errorBuilder: (c,o,s)=>const Icon(Icons.palette)),
+=======
+            SizedBox(width: 20),
+            Image.asset('assets/logo.png', height: 30),
+>>>>>>> 35a035a0f8cf0280ce075ff7e5ab069e42a4fb2a
           ],
         ),
         backgroundColor: Colors.white,
         centerTitle: true,
+<<<<<<< HEAD
         elevation: 1,
       ),
       body: contenido(),
@@ -75,22 +84,43 @@ class _Ventana1State extends State<Ventana1> {
               icon: Icon(Icons.shopping_bag), // Icono de bolsa
               label: "COMPRAS"
           ),
+=======
+      ),
+      body: contenido(),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _indice,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.work_history),
+            label: "MAIN",
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.group), label: "FORO"),
+          BottomNavigationBarItem(icon: Icon(Icons.sell), label: "?"),
+>>>>>>> 35a035a0f8cf0280ce075ff7e5ab069e42a4fb2a
         ],
         onTap: (pos) {
           setState(() {
             _indice = pos;
           });
         },
+<<<<<<< HEAD
         selectedFontSize: 14,
         selectedItemColor: Colors.purple,
         unselectedItemColor: Colors.black54,
         backgroundColor: Colors.blue.shade100,
+=======
+        selectedFontSize: 15,
+        selectedItemColor: Colors.purple,
+        unselectedItemColor: Colors.black,
+        backgroundColor: Colors.blue.shade200,
+>>>>>>> 35a035a0f8cf0280ce075ff7e5ab069e42a4fb2a
       ),
     );
   }
 
   Widget contenido() {
     switch (_indice) {
+<<<<<<< HEAD
       case 0: // --- PANTALLA INICIO (Tus obras) ---
         return Column(
           children: [
@@ -135,6 +165,11 @@ class _Ventana1State extends State<Ventana1> {
         return ListView(
           children: [
             // Buscador del foro
+=======
+      case 1:
+        return ListView(
+          children: [
+>>>>>>> 35a035a0f8cf0280ce075ff7e5ab069e42a4fb2a
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
               child: Column(
@@ -143,7 +178,20 @@ class _Ventana1State extends State<Ventana1> {
                     decoration: InputDecoration(
                       hintText: "Búsqueda...",
                       prefixIcon: const Icon(Icons.search, color: Colors.black),
+<<<<<<< HEAD
                       border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
+=======
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: const BorderSide(
+                          color: colorPrincipal,
+                          width: 3,
+                        ),
+                      ),
+>>>>>>> 35a035a0f8cf0280ce075ff7e5ab069e42a4fb2a
                       filled: true,
                       fillColor: Colors.pink.shade50,
                       contentPadding: const EdgeInsets.symmetric(vertical: 0),
@@ -152,12 +200,16 @@ class _Ventana1State extends State<Ventana1> {
                 ],
               ),
             ),
+<<<<<<< HEAD
             // ¿Qué estás pensando?
+=======
+>>>>>>> 35a035a0f8cf0280ce075ff7e5ab069e42a4fb2a
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextField(
                 decoration: InputDecoration(
                   hintText: "¿Qué estás pensando?",
+<<<<<<< HEAD
                   suffixIcon: IconButton(onPressed: () {}, icon: const Icon(Icons.send, color: Colors.blue)),
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
                 ),
@@ -414,3 +466,180 @@ class _Ventana1State extends State<Ventana1> {
     );
   }
 }
+=======
+                  suffixIcon: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.send, color: Colors.blue),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: const BorderSide(
+                      color: Colors.blue,
+                      width: 1.5,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: const BorderSide(
+                      color: Colors.blueAccent,
+                      width: 2.5,
+                    ),
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Card(
+                child: Column(
+                  children: [
+                    SizedBox(height: 10),
+                    Row(
+                      children: [
+                        Divider(),
+                        SizedBox(height: 10, width: 5),
+                        Image.asset('assets/user.png', width: 35),
+                        SizedBox(height: 10, width: 20),
+                        Text(
+                          "Mi nueva pintura.",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Image.asset('assets/frida.png', width: 250),
+                    //SizedBox(height: 5),
+                    Row(
+                      children: [
+                        SizedBox(width: 10),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.thumb_up),
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.thumb_down),
+                        ),
+                        SizedBox(width: 260),
+                        IconButton(onPressed: () {}, icon: Icon(Icons.comment)),
+                        IconButton(onPressed: () {}, icon: Icon(Icons.share)),
+                      ],
+                    ),
+                  ],
+                ),
+                color: Colors.blue.shade100,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Card(
+                child: Column(
+                  children: [
+                    SizedBox(height: 10),
+                    Row(
+                      children: [
+                        Divider(),
+                        SizedBox(height: 10, width: 5),
+                        Image.asset('assets/user.png', width: 35),
+                        SizedBox(height: 10, width: 20),
+                        Text(
+                          "Me falta motivación.",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "He perdido la motivación en mi vida. "
+                      "Algunos consejos para recuperarla??",
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(height: 5),
+                    Row(
+                      children: [
+                        SizedBox(width: 10),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.thumb_up),
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.thumb_down),
+                        ),
+                        SizedBox(width: 260),
+                        IconButton(onPressed: () {}, icon: Icon(Icons.comment)),
+                        IconButton(onPressed: () {}, icon: Icon(Icons.share)),
+                      ],
+                    ),
+                  ],
+                ),
+                color: Colors.blue.shade100,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Card(
+                child: Column(
+                  children: [
+                    SizedBox(height: 10),
+                    Row(
+                      children: [
+                        Divider(),
+                        SizedBox(height: 10, width: 5),
+                        Image.asset('assets/user.png', width: 35),
+                        SizedBox(height: 10, width: 20),
+                        Text(
+                          "MARIE es la mejor artista.",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "Soy un gran fan de MARIE. Ya conozco todas sus obras, "
+                      "no puedo esperar a que haga una nueva <3.",
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(height: 5),
+                    Row(
+                      children: [
+                        SizedBox(width: 10),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.thumb_up),
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.thumb_down),
+                        ),
+                        SizedBox(width: 260),
+                        IconButton(onPressed: () {}, icon: Icon(Icons.comment)),
+                        IconButton(onPressed: () {}, icon: Icon(Icons.share)),
+                      ],
+                    ),
+                  ],
+                ),
+                color: Colors.blue.shade100,
+              ),
+            ),
+          ],
+        );
+      case 2:
+        return Text("¿?");
+    }
+    return Text("GALERIA");
+  }
+}
+>>>>>>> 35a035a0f8cf0280ce075ff7e5ab069e42a4fb2a
