@@ -12,16 +12,14 @@ const Color colorPrincipal = Color(0xFF8B2E24);
 class _Ventana1State extends State<Ventana1> {
   int _indice = 0;
 
-<<<<<<< HEAD
   // --- DATOS DE COMPRAS (HISTORIAL) ---
-  // Si quieres ver la pantalla vacía, borra el contenido de esta lista: []
   final List<Map<String, String>> comprasRealizadas = [
     {
       "titulo": "Santiago Ixcuintla",
       "precio": "\$2,000",
       "fecha": "14 Feb 2024",
       "estado": "Entregado",
-      "imagen": "assets/obra1.png", // Usando tus imágenes
+      "imagen": "assets/obra1.png",
     },
     {
       "titulo": "Retrato",
@@ -32,8 +30,6 @@ class _Ventana1State extends State<Ventana1> {
     },
   ];
 
-=======
->>>>>>> 35a035a0f8cf0280ce075ff7e5ab069e42a4fb2a
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,26 +46,20 @@ class _Ventana1State extends State<Ventana1> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-<<<<<<< HEAD
             const SizedBox(width: 20),
-            // Asegúrate de que logo.png exista
+            // Asegúrate de que logo.png exista, si no muestra un icono
             Image.asset('assets/logo.png', height: 30, errorBuilder: (c,o,s)=>const Icon(Icons.palette)),
-=======
-            SizedBox(width: 20),
-            Image.asset('assets/logo.png', height: 30),
->>>>>>> 35a035a0f8cf0280ce075ff7e5ab069e42a4fb2a
           ],
         ),
         backgroundColor: Colors.white,
         centerTitle: true,
-<<<<<<< HEAD
         elevation: 1,
       ),
       body: contenido(),
       bottomNavigationBar: BottomNavigationBar(
         iconSize: 24,
         currentIndex: _indice,
-        type: BottomNavigationBarType.fixed, // Para que no se muevan los iconos
+        type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home_filled),
@@ -79,49 +69,28 @@ class _Ventana1State extends State<Ventana1> {
               icon: Icon(Icons.group),
               label: "FORO"
           ),
-          // --- NUEVA PESTAÑA DE COMPRAS ---
+          // --- PESTAÑA DE COMPRAS ---
           BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_bag), // Icono de bolsa
+              icon: Icon(Icons.shopping_bag),
               label: "COMPRAS"
           ),
-=======
-      ),
-      body: contenido(),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _indice,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.work_history),
-            label: "MAIN",
-          ),
-          BottomNavigationBarItem(icon: Icon(Icons.group), label: "FORO"),
-          BottomNavigationBarItem(icon: Icon(Icons.sell), label: "?"),
->>>>>>> 35a035a0f8cf0280ce075ff7e5ab069e42a4fb2a
         ],
         onTap: (pos) {
           setState(() {
             _indice = pos;
           });
         },
-<<<<<<< HEAD
         selectedFontSize: 14,
         selectedItemColor: Colors.purple,
         unselectedItemColor: Colors.black54,
         backgroundColor: Colors.blue.shade100,
-=======
-        selectedFontSize: 15,
-        selectedItemColor: Colors.purple,
-        unselectedItemColor: Colors.black,
-        backgroundColor: Colors.blue.shade200,
->>>>>>> 35a035a0f8cf0280ce075ff7e5ab069e42a4fb2a
       ),
     );
   }
 
   Widget contenido() {
     switch (_indice) {
-<<<<<<< HEAD
-      case 0: // --- PANTALLA INICIO (Tus obras) ---
+      case 0: // --- PANTALLA INICIO ---
         return Column(
           children: [
             Padding(
@@ -149,7 +118,6 @@ class _Ventana1State extends State<Ventana1> {
             Expanded(
               child: ListView(
                 children: [
-                  // Aquí uso tu widget obraItem
                   obraItem("Santiago Ixcuintla, Nayarit", "2000", "assets/obra1.png"),
                   obraItem("Rosa Morada, Nayarit", "2001", "assets/obra2.png"),
                   obraItem("Negrita", "2002", "assets/obra3.png"),
@@ -164,12 +132,6 @@ class _Ventana1State extends State<Ventana1> {
       case 1: // --- PANTALLA FORO ---
         return ListView(
           children: [
-            // Buscador del foro
-=======
-      case 1:
-        return ListView(
-          children: [
->>>>>>> 35a035a0f8cf0280ce075ff7e5ab069e42a4fb2a
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
               child: Column(
@@ -178,20 +140,7 @@ class _Ventana1State extends State<Ventana1> {
                     decoration: InputDecoration(
                       hintText: "Búsqueda...",
                       prefixIcon: const Icon(Icons.search, color: Colors.black),
-<<<<<<< HEAD
                       border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
-=======
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: const BorderSide(
-                          color: colorPrincipal,
-                          width: 3,
-                        ),
-                      ),
->>>>>>> 35a035a0f8cf0280ce075ff7e5ab069e42a4fb2a
                       filled: true,
                       fillColor: Colors.pink.shade50,
                       contentPadding: const EdgeInsets.symmetric(vertical: 0),
@@ -200,43 +149,24 @@ class _Ventana1State extends State<Ventana1> {
                 ],
               ),
             ),
-<<<<<<< HEAD
-            // ¿Qué estás pensando?
-=======
->>>>>>> 35a035a0f8cf0280ce075ff7e5ab069e42a4fb2a
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextField(
                 decoration: InputDecoration(
                   hintText: "¿Qué estás pensando?",
-<<<<<<< HEAD
                   suffixIcon: IconButton(onPressed: () {}, icon: const Icon(Icons.send, color: Colors.blue)),
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
                 ),
               ),
             ),
-            // Publicación 1
-            _buildForoCard(
-                "Mi nueva pintura.",
-                "assets/frida.png",
-                null
-            ),
-            // Publicación 2
-            _buildForoCard(
-                "Me falta motivación.",
-                null,
-                "He perdido la motivación en mi vida. Algunos consejos para recuperarla??"
-            ),
-            // Publicación 3
-            _buildForoCard(
-                "MARIE es la mejor artista.",
-                null,
-                "Soy un gran fan de MARIE. Ya conozco todas sus obras."
-            ),
+            // Publicaciones usando el widget optimizado
+            _buildForoCard("Mi nueva pintura.", "assets/frida.png", null),
+            _buildForoCard("Me falta motivación.", null, "He perdido la motivación en mi vida. Algunos consejos para recuperarla??"),
+            _buildForoCard("MARIE es la mejor artista.", null, "Soy un gran fan de MARIE. Ya conozco todas sus obras."),
           ],
         );
 
-      case 2: // --- PANTALLA COMPRAS (NUEVA) ---
+      case 2: // --- PANTALLA COMPRAS ---
         return _pantallaCompras();
 
       default:
@@ -343,7 +273,7 @@ class _Ventana1State extends State<Ventana1> {
     );
   }
 
-  // --- TU WIDGET ORIGINAL PARA OBRAS (INICIO) ---
+  // --- WIDGET REUTILIZABLE PARA OBRAS ---
   Widget obraItem(String titulo, String anio, String imagen) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -414,8 +344,7 @@ class _Ventana1State extends State<Ventana1> {
     );
   }
 
-  // --- WIDGET HELPER PARA LIMPIAR EL CÓDIGO DEL FORO ---
-  // (Esto evita repetir el Card gigante 3 veces y arregla el problema de tamaño)
+  // --- WIDGET REUTILIZABLE PARA FORO (Limpio y ordenado) ---
   Widget _buildForoCard(String titulo, String? imagen, String? descripcion) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -429,7 +358,7 @@ class _Ventana1State extends State<Ventana1> {
                 const SizedBox(width: 15),
                 Image.asset('assets/user.png', width: 35),
                 const SizedBox(width: 20),
-                Expanded( // Expanded evita que el texto se salga si es muy largo
+                Expanded(
                   child: Text(
                     titulo,
                     style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -453,9 +382,7 @@ class _Ventana1State extends State<Ventana1> {
                 const SizedBox(width: 10),
                 IconButton(onPressed: () {}, icon: const Icon(Icons.thumb_up)),
                 IconButton(onPressed: () {}, icon: const Icon(Icons.thumb_down)),
-
-                const Spacer(), // ESTO ARREGLA EL ERROR DE PANTALLA PEQUEÑA
-
+                const Spacer(),
                 IconButton(onPressed: () {}, icon: const Icon(Icons.comment)),
                 IconButton(onPressed: () {}, icon: const Icon(Icons.share)),
               ],
@@ -466,180 +393,3 @@ class _Ventana1State extends State<Ventana1> {
     );
   }
 }
-=======
-                  suffixIcon: IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.send, color: Colors.blue),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
-                    borderSide: const BorderSide(
-                      color: Colors.blue,
-                      width: 1.5,
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
-                    borderSide: const BorderSide(
-                      color: Colors.blueAccent,
-                      width: 2.5,
-                    ),
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Card(
-                child: Column(
-                  children: [
-                    SizedBox(height: 10),
-                    Row(
-                      children: [
-                        Divider(),
-                        SizedBox(height: 10, width: 5),
-                        Image.asset('assets/user.png', width: 35),
-                        SizedBox(height: 10, width: 20),
-                        Text(
-                          "Mi nueva pintura.",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 10),
-                    Image.asset('assets/frida.png', width: 250),
-                    //SizedBox(height: 5),
-                    Row(
-                      children: [
-                        SizedBox(width: 10),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.thumb_up),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.thumb_down),
-                        ),
-                        SizedBox(width: 260),
-                        IconButton(onPressed: () {}, icon: Icon(Icons.comment)),
-                        IconButton(onPressed: () {}, icon: Icon(Icons.share)),
-                      ],
-                    ),
-                  ],
-                ),
-                color: Colors.blue.shade100,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Card(
-                child: Column(
-                  children: [
-                    SizedBox(height: 10),
-                    Row(
-                      children: [
-                        Divider(),
-                        SizedBox(height: 10, width: 5),
-                        Image.asset('assets/user.png', width: 35),
-                        SizedBox(height: 10, width: 20),
-                        Text(
-                          "Me falta motivación.",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      "He perdido la motivación en mi vida. "
-                      "Algunos consejos para recuperarla??",
-                      textAlign: TextAlign.center,
-                    ),
-                    SizedBox(height: 5),
-                    Row(
-                      children: [
-                        SizedBox(width: 10),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.thumb_up),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.thumb_down),
-                        ),
-                        SizedBox(width: 260),
-                        IconButton(onPressed: () {}, icon: Icon(Icons.comment)),
-                        IconButton(onPressed: () {}, icon: Icon(Icons.share)),
-                      ],
-                    ),
-                  ],
-                ),
-                color: Colors.blue.shade100,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Card(
-                child: Column(
-                  children: [
-                    SizedBox(height: 10),
-                    Row(
-                      children: [
-                        Divider(),
-                        SizedBox(height: 10, width: 5),
-                        Image.asset('assets/user.png', width: 35),
-                        SizedBox(height: 10, width: 20),
-                        Text(
-                          "MARIE es la mejor artista.",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      "Soy un gran fan de MARIE. Ya conozco todas sus obras, "
-                      "no puedo esperar a que haga una nueva <3.",
-                      textAlign: TextAlign.center,
-                    ),
-                    SizedBox(height: 5),
-                    Row(
-                      children: [
-                        SizedBox(width: 10),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.thumb_up),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.thumb_down),
-                        ),
-                        SizedBox(width: 260),
-                        IconButton(onPressed: () {}, icon: Icon(Icons.comment)),
-                        IconButton(onPressed: () {}, icon: Icon(Icons.share)),
-                      ],
-                    ),
-                  ],
-                ),
-                color: Colors.blue.shade100,
-              ),
-            ),
-          ],
-        );
-      case 2:
-        return Text("¿?");
-    }
-    return Text("GALERIA");
-  }
-}
->>>>>>> 35a035a0f8cf0280ce075ff7e5ab069e42a4fb2a

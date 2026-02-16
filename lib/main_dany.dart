@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sprint2marie_db_jb_kh/ventana1.dart';
+import 'package:sprint2marie_db_jb_kh/ventana1.dart' hide Text;
 
 export 'package:flutter/material.dart';
 
